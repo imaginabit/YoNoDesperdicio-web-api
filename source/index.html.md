@@ -23,9 +23,11 @@ search: true
 
 # Introduccion
 
-Bienvenido a la API de Yo No Desperdicio.
+API Reference Yo No Desperdicio.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+WIP!
+
+<!-- We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. -->
 
 This API documentation page was created with [Slate](https://github.com/lord/slate).
 
