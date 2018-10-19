@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Documentation</title>
+    <title>API Reference Yo No Desperdicio</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -198,10 +198,10 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch.js"></script>
+      <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,6 +210,13 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduccion" class="toc-h1 toc-link" data-title="Introduccion">Introduccion</a>
@@ -243,15 +250,81 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#user" class="toc-h1 toc-link" data-title="User">User</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-user-info" class="toc-h2 toc-link" data-title="Get User Info">Get User Info</a>
+                  </li>
+                  <li>
+                    <a href="#user-ads-no-auth" class="toc-h2 toc-link" data-title="User ads ( no auth )">User ads ( no auth )</a>
+                  </li>
+                  <li>
+                    <a href="#anuncios-usuario-autentificado" class="toc-h2 toc-link" data-title="Anuncios usuario (autentificado)">Anuncios usuario (autentificado)</a>
+                  </li>
+                  <li>
+                    <a href="#send-new-firebase-token-to-user" class="toc-h2 toc-link" data-title="Send new firebase token to user">Send new firebase token to user</a>
+                  </li>
+                  <li>
+                    <a href="#usen-new-avatar" class="toc-h2 toc-link" data-title="Usen new avatar">Usen new avatar</a>
+                  </li>
+                  <li>
+                    <a href="#rate-user" class="toc-h2 toc-link" data-title="Rate user">Rate user</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#conversations" class="toc-h1 toc-link" data-title="Conversations">Conversations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-conversations" class="toc-h2 toc-link" data-title="Get Conversations">Get Conversations</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#messages" class="toc-h1 toc-link" data-title="Messages">Messages</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-messages-from-conversation" class="toc-h2 toc-link" data-title="Get Messages from conversation">Get Messages from conversation</a>
+                  </li>
+                  <li>
+                    <a href="#new-message" class="toc-h2 toc-link" data-title="New Message">New Message</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#ofertas" class="toc-h1 toc-link" data-title="Ofertas">Ofertas</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#view-all-offers" class="toc-h2 toc-link" data-title="View all offers">View all offers</a>
+                  </li>
+                  <li>
+                    <a href="#view-the-offer-with-id-1" class="toc-h2 toc-link" data-title="View the offer with id=1">View the offer with id=1</a>
+                  </li>
+                  <li>
+                    <a href="#create-an-offer" class="toc-h2 toc-link" data-title="Create an offer">Create an offer</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
       </ul>
+        <ul class="toc-footer">
+            <li><a href='http://yonodesperdicio.com/'>web yo no desperdicio</a></li>
+            <li><a href='https://play.google.com/store/apps/details?id=com.imaginabit.yonodesperdicion'>Aplicacion android</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduccion'>Introduccion</h1>
-<p>Bienvenido a la API de Yo No Desperdicio.</p>
+<p>API Reference Yo No Desperdicio.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>WIP!</p>
+
+<!-- We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. -->
 
 <p>This API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>.</p>
 <h1 id='authentication'>Authentication</h1>
@@ -345,7 +418,7 @@ You must replace <code>auth_token</code> with your personal auth token.
             </span><span class="s2">"expiration_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"pick_up_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-09"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"comments_enabled"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/ads/images/000/000/225/original/IMG_8105.JPG?1539072229"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/url/images/example.jpg"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28003"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"madrid"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"madrid"</span><span class="p">,</span><span class="w">
@@ -356,47 +429,18 @@ You must replace <code>auth_token</code> with your personal auth token.
             </span><span class="s2">"comment_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="err">...</span><span class="w">
-        </span><span class="mi">25</span><span class="w"> </span><span class="err">anuncios</span><span class="w">
-        </span><span class="err">...</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">187</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Angurriñas    "</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"La fecha max de recogida es hoy viernes 03/08. Estare disponible hasta las 13.30 en Pza. de Castilla"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"grams"</span><span class="p">:</span><span class="w"> </span><span class="mi">125</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"expiration_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"pick_up_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-03"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"comments_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/ads/images/000/000/187/original/angurri%C3%B1as____.jpg?1533253450"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28046"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Madrid"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Madrid"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"food_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pescado y marisco"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T23:44:13.000Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-16T12:42:36.000Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1378</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"comment_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-        </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beatriz"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#######"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"propias/avatar_original.png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28003"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#####"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"total_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w">
             </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
             </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-03"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1570</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acc"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"propias/avatar_original.png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28050"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"total_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-04"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="err">...</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -406,37 +450,43 @@ You must replace <code>auth_token</code> with your personal auth token.
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https//yonodesperdicio.org/api/ads</code></p>
-<h3 id='headers'>Headers</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authroization</td>
-<td>must send this</td>
-</tr>
-</tbody></table>
-<h2 id='get-a-specific-ad'>Get a Specific Ad</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<!-- ### Headers
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+Parameter | Description
+--------- |  -----------
+Authroization | must send this  -->
+<h2 id='get-a-specific-ad'>Get a Specific Ad</h2>
+<!-- ```ruby
+require 'kittn'
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.get(2)
+```
+
+```shell
+curl "http://example.com/api/kittens/2"
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.get(2);
+```
+
+-->
+
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -448,11 +498,11 @@ You must replace <code>auth_token</code> with your personal auth token.
   </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<p>This endpoint retrieves a specific ad info.</p>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code>GET http://example.com/kittens/**id**</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -462,11 +512,11 @@ You must replace <code>auth_token</code> with your personal auth token.
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>Id of the ad to retrieve</td>
 </tr>
 </tbody></table>
 <h2 id='create-ad'>Create Ad</h2>
-<p>POST https://yonodesperdicio.org/api/ads</p>
+<p><code>POST https://yonodesperdicio.org/api/ads</code></p>
 <pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
   <span class="s2">"ad"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Milk"</span><span class="p">,</span>
@@ -487,16 +537,16 @@ You must replace <code>auth_token</code> with your personal auth token.
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="s2">"http://beta.yonodesperdicio.org/api/ads"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="s2">"https://yonodesperdicio.org/api/ads"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"authorization"</span><span class="p">,</span> <span class="s2">"auth_token"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"content-type"</span><span class="p">,</span> <span class="s2">"application/json"</span><span class="p">);</span>
 
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre><h2 id='edit-ad'>Edit Ad</h2>
-<p>PUT https://yonodesperdicio.org/api/ads/<strong>ad_id</strong></p>
+<p><code>PUT https://yonodesperdicio.org/api/ads/**ad_id**</code></p>
 <pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  http://beta.yonodesperdicio.org/api/ads/74 <span class="se">\</span>
+  https://yonodesperdicio.org/api/ads/74 <span class="se">\</span>
   -H <span class="s1">'authorization: **auth_token**'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\ </span>
   -d <span class="s1">'{"ad": {"title":"Edit from api"}}'</span>
@@ -515,14 +565,16 @@ You must replace <code>auth_token</code> with your personal auth token.
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"PUT"</span><span class="p">,</span> <span class="s2">"http://beta.yonodesperdicio.org/api/ads/74"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"PUT"</span><span class="p">,</span> <span class="s2">"https://yonodesperdicio.org/api/ads/74"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"authorization"</span><span class="p">,</span> <span class="s2">"**auth_toket**"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"content-type"</span><span class="p">,</span> <span class="s2">"application/json"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre><h2 id='contador-total-kg'>Contador total KG</h2>
-<p>https://yonodesperdicio.org/api/total_kg</p>
-<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+<p><code>GET https://yonodesperdicio.org/api/total_kg</code></p>
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  https://yonodesperdicio.org/api/total_kg
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
@@ -536,15 +588,19 @@ You must replace <code>auth_token</code> with your personal auth token.
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"https://yonodesperdicio.org/api/total_kg"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-
-<span class="s2">```json
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:
+<code>json
 {
-    "total_kg": 105.61
+    &quot;total_kg&quot;: 105.61
 }
-</span></code></pre><h2 id='delete-ad'>Delete Ad</h2>
-<p>DELETE http://yonodesperdicio.org/api/ads/<strong>ad_id</strong></p>
+</code></p>
+</blockquote>
+<h2 id='delete-ad'>Delete Ad</h2>
+<p>DELETE https://yonodesperdicio.org/api/ads/<strong>ad_id</strong></p>
 <pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
-  http://yonodesperdicio.org/api/ads/66 <span class="se">\</span>
+  https://yonodesperdicio.org/api/ads/66 <span class="se">\</span>
   -H <span class="s1">'authorization: auth_token'</span> <span class="se">\ </span> 
   -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{"ad": { "title":"probando desde api","body":"un alimento muy rico","grams":"120", "status":"1", "food_category":"bebidas","image": "" }}'</span>
@@ -568,7 +624,7 @@ You must replace <code>auth_token</code> with your personal auth token.
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"DELETE"</span><span class="p">,</span> <span class="s2">"http://yonodesperdicio.org/api/ads/66"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"DELETE"</span><span class="p">,</span> <span class="s2">"https://yonodesperdicio.org/api/ads/66"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"authorization"</span><span class="p">,</span> <span class="s2">"auth_token"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"content-type"</span><span class="p">,</span> <span class="s2">"application/json"</span><span class="p">);</span>
 
@@ -578,10 +634,390 @@ You must replace <code>auth_token</code> with your personal auth token.
 </code></pre><h2 id='categories'>Categories</h2>
 <p>GET https://yonodesperdicio.org/api/categories</p>
 <pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://yonodesperdicio.org/api/categories 
+  https://yonodesperdicio.org/api/categories 
+</code></pre><h1 id='user'>User</h1><h2 id='get-user-info'>Get User Info</h2>
+<p>GET http://beta.yonodesperdicio.org/api/users/<strong>user_id</strong></p>
+
+<blockquote>
+<p>respuesta otro usuario</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"anatecla"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/images/000/000/001/original/Sula_patas_azules.600x450.jpg?1443019723"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28011"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-07"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<blockquote>
+<p>resupuesta tu propio usuairo</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"session_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">247</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eca"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"propias/avatar_original.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35011"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"las palmas"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lpgc"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**auth_token**"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-08"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fcm_registration_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"**firebase cloud message token**"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='user-ads-no-auth'>User ads ( no auth )</h2>
+<p>GET https://yonodesperdicio.org/api/ads?user_id=<strong>user_id</strong></p>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="nx">data</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"username"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+<span class="nx">data</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"password"</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"readystatechange"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"http://yonodesperdicio.org/api/ads?user_id=1"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"authorization"</span><span class="p">,</span> <span class="s2">"null"</span><span class="p">);</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"ads"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">146</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Conserva de tomate"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Varios botes de tomate natural triturado. Conservas manuales."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"grams"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expiration_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pick_up_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-11"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comments_enabled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/ads/images/000/000/146/original/Tomatoes_plain_and_sliced.jpg?1510251128"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28011"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Madrid"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Madrid"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"food_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"conservas"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-09T18:09:12.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-09T18:12:09.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comment_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Avellanas"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Me dieron varios kilos de avellanas. Están muy ricas, pero no puedo consumirlas todas que son demasiadas! Si quieres, escríbeme y te las paso."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"grams"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expiration_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"pick_up_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-07"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comments_enabled"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/ads/images/000/000/002/original/avellanas.jpg?1445260079"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28013"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Madrid"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Madrid"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"food_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fruta"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-10-19T13:07:59.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-05T16:18:59.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comment_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="mi">10</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"anatecla"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/images/000/000/001/original/Sula_patas_azules.600x450.jpg?1443019723"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28011"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-07"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"anatecla"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/system/users/images/000/000/001/original/Sula_patas_azules.600x450.jpg?1443019723"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28011"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-07"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Me van quedando pocas..."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-10-26T14:59:04.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-10-26T14:59:04.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_objects"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='anuncios-usuario-autentificado'>Anuncios usuario (autentificado)</h2>
+<p>GET https://yonodesperdicio.org/api/ads</p>
+<pre class="highlight plaintext"><code>curl -X GET \
+  https://yonodesperdicio.org/api/ads \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -F username=**username** \
+  -F password=**pass**
+</code></pre><h2 id='send-new-firebase-token-to-user'>Send new firebase token to user</h2>
+<p>Device send token to save on </p>
+
+<p>PUT https://yonodesperdicio.org/api/users/218</p>
+<h2 id='usen-new-avatar'>Usen new avatar</h2>
+<p>PUT http://yonodesperdicio.org/api/users/43</p>
+<h2 id='rate-user'>Rate user</h2>
+<p>POST https://yonodesperdicio.org/api/users/43/rate</p>
+
+<p>???</p>
+<h1 id='conversations'>Conversations</h1><h2 id='get-conversations'>Get Conversations</h2>
+<p>GET https://yonodesperdicio.org/api/mailboxes/inbox/conversations</p>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"readystatechange"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"https://yonodesperdicio.org/api/mailboxes/inbox/conversations"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"content-type"</span><span class="p">,</span> <span class="s2">"application/json"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"authorization"</span><span class="p">,</span> <span class="s2">"auth_token"</span><span class="p">);</span>
+
+
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"conversations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">151</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"manzanas"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-23T09:46:39.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-06T12:12:52.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"thread_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pipas"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-08T16:53:52.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-12T21:23:01.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"thread_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='messages'>Messages</h1><h2 id='get-messages-from-conversation'>Get Messages from conversation</h2>
+<p>GET https://yonodesperdicio.org/api/mailboxes/inbox/conversations/<strong>conversation_id</strong>/messages</p>
+<pre class="highlight plaintext"><code></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">467</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hola quiero tus manzanas"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"manzanas"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sender_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">247</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sender_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conversation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">151</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"draft"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-23T09:46:39.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-23T09:46:39.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notified_object_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notified_object_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notification_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"global"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expires"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prueba"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"manzanas"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sender_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">247</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sender_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conversation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">151</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"draft"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-06T12:12:50.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-06T12:12:50.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notified_object_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notified_object_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notification_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"global"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expires"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_objects"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='new-message'>New Message</h2>
+<p>https://yonodesperdicio.org/api/new_message/<strong>user_id</strong></p>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+  <span class="s2">"message"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"subject"</span><span class="p">:</span> <span class="s2">"Apples"</span><span class="p">,</span>
+    <span class="s2">"body"</span><span class="p">:</span> <span class="s2">"Hi, I really like apples"</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"readystatechange"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="s2">"https://yonodesperdicio.org/api/new_message/user_id"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"content-type"</span><span class="p">,</span> <span class="s2">"application/json"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"authorization"</span><span class="p">,</span> <span class="s2">"auth_token"</span><span class="p">);</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="err">*message_id*</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hi, I really like apples"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apples"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sender_id"</span><span class="p">:</span><span class="w"> </span><span class="err">*your_user_id*</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sender_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"conversation_id"</span><span class="p">:</span><span class="w"> </span><span class="err">*conversation_id*</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"draft"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-19T15:58:50.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-19T15:58:50.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notified_object_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notified_object_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"global"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"expires"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='ofertas'>Ofertas</h1>
+<p><em>Lo he copiado tal cual del mensaje de telegram de Mijaíl Rondón</em></p>
+<h2 id='view-all-offers'>View all offers</h2>
+<p>http://beta.yonodesperdicio.org/api/offers</p>
+<h2 id='view-the-offer-with-id-1'>View the offer with id=1</h2>
+<p>http://beta.yonodesperdicio.org/api/offers/1</p>
+<h2 id='create-an-offer'>Create an offer</h2>
+<p>POST to /api/offers with the offer data and the Authorization header with the token that returned the login</p>
+
+<p>Example:</p>
+<pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> /
+    -H <span class="s2">"Authorization: TB1T2pDQuGYExhJQ5vYB"</span> /
+    -X POST /
+    -d <span class="s1">'{"offer":{"title": "Title of offer", "address": "The offer address", "store": "The offer store", "until": "2018-10-21", "description": "The offer description"}}'</span> /
+    -X POST http://localhost:3000/api/offers
 </code></pre>
+<blockquote>
+<p>Returns the saved offer, with the id assigned in the database:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title of offer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The offer address"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"store"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The offer store"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"until"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-21T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"available"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/assets/propias/offer_medium.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/assets/propias/offer_large.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"original"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/propias/offer_original.png"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='errors'>Errors</h1>
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
       </div>
       <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
       </div>
     </div>
   </body>
