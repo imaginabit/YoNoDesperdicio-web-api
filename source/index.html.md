@@ -2,22 +2,21 @@
 title: API Reference Yo No Desperdicio
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  # - ruby
-  # - python
-  - javascript
-  # - java
-  # - kotlin
+   - shell
+#   - javascript
+#   - java
 
 toc_footers:
-    - <a href='http://yonodesperdicio.com/'>web yo no desperdicio</a>
+  - <a href='http://yonodesperdicio.com/'>web yo no desperdicio</a>
   - <a href='https://play.google.com/store/apps/details?id=com.imaginabit.yonodesperdicion'>Aplicacion android</a>
-  # - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - user
   - conversations
   - offers  
   - errors
+
 
 search: true
 ---
@@ -135,7 +134,7 @@ curl "https://yonodesperdicio.org/api/ads"
             "expiration_date": null,
             "pick_up_date": "2019-04-09",
             "comments_enabled": 1,
-            "image": "/system/ads/images/000/000/225/original/IMG_8105.JPG?1539072229",
+            "image": "/url/images/example.jpg",
             "zipcode": "28003",
             "city": "madrid",
             "province": "madrid",
@@ -146,47 +145,18 @@ curl "https://yonodesperdicio.org/api/ads"
             "comment_ids": []
         },
         ...
-        25 anuncios
-        ...
-        {
-            "id": 187,
-            "title": "Angurriñas    ",
-            "body": "La fecha max de recogida es hoy viernes 03/08. Estare disponible hasta las 13.30 en Pza. de Castilla",
-            "status": 1,
-            "grams": 125,
-            "expiration_date": null,
-            "pick_up_date": "2018-08-03",
-            "comments_enabled": null,
-            "image": "/system/ads/images/000/000/187/original/angurri%C3%B1as____.jpg?1533253450",
-            "zipcode": "28046",
-            "city": "Madrid",
-            "province": "Madrid",
-            "food_category": "pescado y marisco",
-            "created_at": "2018-08-02T23:44:13.000Z",
-            "updated_at": "2018-08-16T12:42:36.000Z",
-            "user_id": 1378,
-            "comment_ids": []
-        }
     ],
     "users": [
         {
             "id": 35,
-            "username": "Beatriz",
+            "username": "#######",
             "image": "propias/avatar_original.png",
-            "zipcode": "28003",
+            "zipcode": "#####",
             "total_quantity": 180,
             "rating": 5,
             "created_at": "2015-11-03"
         },
-        {
-            "id": 1570,
-            "username": "acc",
-            "image": "propias/avatar_original.png",
-            "zipcode": "28050",
-            "total_quantity": 0,
-            "rating": null,
-            "created_at": "2018-10-04"
-        }
+        ...
     ],
     "meta": {
         "pagination": {
@@ -198,22 +168,21 @@ curl "https://yonodesperdicio.org/api/ads"
 }
 ```
 
-This endpoint retrieves all kittens.
 
 ### HTTP Request
 
 `GET https//yonodesperdicio.org/api/ads`
 
-### Headers
+<!-- ### Headers
 
 Parameter | Description
 --------- |  -----------
-Authroization | must send this 
+Authroization | must send this  -->
 
 
 ## Get a Specific Ad
 
-```ruby
+<!-- ```ruby
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -239,6 +208,8 @@ let api = kittn.authorize('meowmeowmeow');
 let max = api.kittens.get(2);
 ```
 
+-->
+
 > The above command returns JSON structured like this:
 
 ```json
@@ -251,25 +222,26 @@ let max = api.kittens.get(2);
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint retrieves a specific ad info.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://example.com/kittens/**id**`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+ID | Id of the ad to retrieve
+
 
 
 
 ## Create Ad
 
-POST https://yonodesperdicio.org/api/ads
+`POST https://yonodesperdicio.org/api/ads`
 
 ```javascript
 var data = JSON.stringify({
@@ -292,7 +264,7 @@ xhr.addEventListener("readystatechange", function () {
   }
 });
 
-xhr.open("POST", "http://beta.yonodesperdicio.org/api/ads");
+xhr.open("POST", "https://yonodesperdicio.org/api/ads");
 xhr.setRequestHeader("authorization", "auth_token");
 xhr.setRequestHeader("content-type", "application/json");
 
@@ -303,11 +275,12 @@ xhr.send(data);
 
 ## Edit Ad
 
-PUT https://yonodesperdicio.org/api/ads/**ad_id**
+`PUT https://yonodesperdicio.org/api/ads/**ad_id**`
+
 
 ```shell
 curl -X PUT \
-  http://beta.yonodesperdicio.org/api/ads/74 \
+  https://yonodesperdicio.org/api/ads/74 \
   -H 'authorization: **auth_token**' \
   -H 'content-type: application/json' \ 
   -d '{"ad": {"title":"Edit from api"}}'
@@ -329,7 +302,7 @@ xhr.addEventListener("readystatechange", function () {
   }
 });
 
-xhr.open("PUT", "http://beta.yonodesperdicio.org/api/ads/74");
+xhr.open("PUT", "https://yonodesperdicio.org/api/ads/74");
 xhr.setRequestHeader("authorization", "**auth_toket**");
 xhr.setRequestHeader("content-type", "application/json");
 
@@ -340,7 +313,12 @@ xhr.send(data);
 
 ## Contador total KG
 
-https://yonodesperdicio.org/api/total_kg
+`GET https://yonodesperdicio.org/api/total_kg`
+
+```shell
+curl -X GET \
+  https://yonodesperdicio.org/api/total_kg
+```
 
 ```javascript
 var data = null;
@@ -357,7 +335,9 @@ xhr.addEventListener("readystatechange", function () {
 xhr.open("GET", "https://yonodesperdicio.org/api/total_kg");
 
 xhr.send(data);
+```
 
+>The above command returns JSON structured like this:
 ```json
 {
     "total_kg": 105.61
@@ -366,12 +346,12 @@ xhr.send(data);
 
 ## Delete Ad
 
-DELETE http://yonodesperdicio.org/api/ads/**ad_id**
+DELETE https://yonodesperdicio.org/api/ads/**ad_id**
 
 
 ```shell
 curl -X DELETE \
-  http://yonodesperdicio.org/api/ads/66 \
+  https://yonodesperdicio.org/api/ads/66 \
   -H 'authorization: auth_token' \  
   -H 'content-type: application/json' \
   -d '{"ad": { "title":"probando desde api","body":"un alimento muy rico","grams":"120", "status":"1", "food_category":"bebidas","image": "" }}'
@@ -398,7 +378,7 @@ xhr.addEventListener("readystatechange", function () {
   }
 });
 
-xhr.open("DELETE", "http://yonodesperdicio.org/api/ads/66");
+xhr.open("DELETE", "https://yonodesperdicio.org/api/ads/66");
 xhr.setRequestHeader("authorization", "auth_token");
 xhr.setRequestHeader("content-type", "application/json");
 
@@ -413,6 +393,6 @@ GET https://yonodesperdicio.org/api/categories
 
 ```shell
 curl -X GET \
-  http://yonodesperdicio.org/api/categories 
+  https://yonodesperdicio.org/api/categories 
 ```
 
