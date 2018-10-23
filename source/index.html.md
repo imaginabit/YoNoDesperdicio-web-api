@@ -216,11 +216,37 @@ let max = api.kittens.get(2);
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+    "ad": {
+        "id": *id_ad*,
+        "title": "Cápsulas de café para Nespresso",
+        "body": "Cápsulas de café Expresso tenia unas cuantas de sobra",
+        "status": 1,
+        "grams": 2000,
+        "expiration_date": null,
+        "pick_up_date": "2016-09-17",
+        "comments_enabled": null,
+        "image": "/img/url/image.jpg",
+        "zipcode": "28005",
+        "city": "Madrid",
+        "province": "Madrid",
+        "food_category": "carne y aves",
+        "created_at": "2016-09-07T11:14:09.000Z",
+        "updated_at": "2016-09-10T07:37:27.000Z",
+        "user_id": **user_id**,
+        "comment_ids": []
+    },
+    "users": [
+        {
+            "id": **user_id**,
+            "username": "dnl",
+            "image": "/img/url/aoeu.jpg",
+            "zipcode": "28005",
+            "total_quantity": 150,
+            "rating": 5,
+            "created_at": "2015-09-18"
+        }
+    ],
+    "comments": []
 }
 ```
 
@@ -230,13 +256,14 @@ This endpoint retrieves a specific ad info.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/**id**`
+`GET https://yonodesperdicio.org/api/ads/**id_ad**`
+
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | Id of the ad to retrieve
+id_ad | Id of the ad to retrieve
 
 
 
