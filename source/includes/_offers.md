@@ -1,6 +1,9 @@
-# Ofertas 
+# Offers 
 
-*Lo he copiado tal cual del mensaje de telegram de Mijaíl Rondón*
+<aside class="notice">
+Edit me, please
+</aside>
+*Lo he copiado tal cual del mensaje de telegram de Mijaíl*
 
 ##View all offers
 
