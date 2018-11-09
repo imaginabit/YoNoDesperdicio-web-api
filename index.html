@@ -279,7 +279,10 @@
             <a href="#conversations" class="toc-h1 toc-link" data-title="Conversations">Conversations</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-conversations" class="toc-h2 toc-link" data-title="Get Conversations">Get Conversations</a>
+                    <a href="#get-conversations-inbox" class="toc-h2 toc-link" data-title="Get Conversations INBOX">Get Conversations INBOX</a>
+                  </li>
+                  <li>
+                    <a href="#get-conversations-sent" class="toc-h2 toc-link" data-title="Get Conversations SENT">Get Conversations SENT</a>
                   </li>
               </ul>
           </li>
@@ -287,7 +290,10 @@
             <a href="#messages" class="toc-h1 toc-link" data-title="Messages">Messages</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-messages-from-conversation" class="toc-h2 toc-link" data-title="Get Messages from conversation">Get Messages from conversation</a>
+                    <a href="#get-messages-from-conversation-inbox" class="toc-h2 toc-link" data-title="Get Messages from conversation INBOX">Get Messages from conversation INBOX</a>
+                  </li>
+                  <li>
+                    <a href="#get-messages-from-conversation-sent" class="toc-h2 toc-link" data-title="Get Messages from conversation SENT">Get Messages from conversation SENT</a>
                   </li>
                   <li>
                     <a href="#new-message" class="toc-h2 toc-link" data-title="New Message">New Message</a>
@@ -840,8 +846,33 @@ let max = api.kittens.get(2);
 <p>POST https://yonodesperdicio.org/api/users/43/rate</p>
 
 <p>???</p>
-<h1 id='conversations'>Conversations</h1><h2 id='get-conversations'>Get Conversations</h2>
-<p>GET https://yonodesperdicio.org/api/mailboxes/inbox/conversations</p>
+<h1 id='conversations'>Conversations</h1>
+<p>Ahora mismo la aplicacion sigue este proceso para obtener las convesraciones </p>
+
+<p>llama get conversations INBOX
+cuando obtiene el resultado llama a get conversations SENT</p>
+<h2 id='get-conversations-inbox'>Get Conversations INBOX</h2>
+<p>Get conversations of the user, INBOX only has conversations created by other user or with awnser from other user</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://yonodesperdicio.org/api/mailboxes/inbox/conversations</code></p>
+<h4 id='headers'>Headers</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Authorization token</td>
+</tr>
+</tbody></table>
+
+<!-- #### URL Parameters
+
+Parameter | Description
+--------- | -----------
+user_id | Id of the ad to retrieve -->
 <pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
@@ -860,7 +891,57 @@ let max = api.kittens.get(2);
 
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</code></pre><h4 id='json-response'>Json response</h4>
+<p>list of conversations with this params :</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Authorization token</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>Conversation subject</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>date of creation</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>date of last message</td>
+</tr>
+<tr>
+<td>thread_id</td>
+<td>?</td>
+</tr>
+</tbody></table>
+
+<p><em>Proposed</em></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>id of the other user or id of all users in conversation</td>
+</tr>
+<tr>
+<td>last_msg</td>
+<td>text of the last message in conversation</td>
+</tr>
+</tbody></table>
+
+<p>Devuelve json con id y subject de la conversacion</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"conversations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">151</span><span class="p">,</span><span class="w">
@@ -878,8 +959,68 @@ let max = api.kittens.get(2);
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='messages'>Messages</h1><h2 id='get-messages-from-conversation'>Get Messages from conversation</h2>
-<p>GET https://yonodesperdicio.org/api/mailboxes/inbox/conversations/<strong>conversation_id</strong>/messages</p>
+</span></code></pre><h2 id='get-conversations-sent'>Get Conversations SENT</h2>
+<p>Get conversations of the user, SENT only has conversations created by the user </p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://yonodesperdicio.org/api/mailboxes/sent/conversations</code></p>
+<h4 id='headers-2'>Headers</h4>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Authorization token</td>
+</tr>
+</tbody></table>
+
+<!-- #### URL Parameters
+
+Parameter | Description
+--------- | -----------
+user_id | Id of the ad to retrieve -->
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"readystatechange"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"https://yonodesperdicio.org/api/mailboxes/inbox/conversations"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"content-type"</span><span class="p">,</span> <span class="s2">"application/json"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"authorization"</span><span class="p">,</span> <span class="s2">"auth_token"</span><span class="p">);</span>
+
+
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</code></pre>
+<p>Devuelve json con id y subject de la conversacion</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"conversations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">151</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"manzanas"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-23T09:46:39.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-06T12:12:52.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"thread_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pipas"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-08T16:53:52.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-12T21:23:01.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"thread_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='messages'>Messages</h1><h2 id='get-messages-from-conversation-inbox'>Get Messages from conversation INBOX</h2>
+<p><code>GET https://yonodesperdicio.org/api/mailboxes/inbox/conversations/**conversation_id**/messages</code></p>
 <pre class="highlight plaintext"><code></code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -927,6 +1068,42 @@ let max = api.kittens.get(2);
             </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
             </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"total_objects"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='get-messages-from-conversation-sent'>Get Messages from conversation SENT</h2>
+<p><code>GET https://yonodesperdicio.org/api/mailboxes/sent/conversations/**conversation.id**/messages</code></p>
+
+<p>la respuesta es igual que en INBOX </p>
+
+<p>Notese que si el usuario manda un mensaje y no obtiene respuesta no hay manera de saber cual es el usuaria al que se le ha enviado el mensaje </p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">510</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hola"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prueba"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sender_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">41</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sender_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"conversation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"draft"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-09T20:11:37.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-09T20:11:37.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notified_object_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notified_object_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notification_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"global"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"expires"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"pagination"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"per_page"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_objects"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
